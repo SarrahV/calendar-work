@@ -3,3 +3,4 @@
 Get Started: Node Version should be above 5.0
     1. npm install
     2. node app.js
+    3. localhost:3030
