@@ -42,7 +42,7 @@
       left.addEventListener('click', function() { self.prevMonth(); });
 
       //Append the Elements
-      this.header.appendChild(this.title); 
+      this.header.appendChild(this.title);
       this.header.appendChild(right);
       this.header.appendChild(left);
       this.el.appendChild(this.header);
@@ -53,12 +53,12 @@
 
   Calendar.prototype.drawMonth = function() {
     var self = this;
-    
+
     this.events.forEach(function(ev) {
      ev.date = self.current.clone().date(Math.random() * (29 - 1) + 1);
     });
-    
-    
+
+
     if(this.month) {
       this.oldMonth = this.month;
       this.oldMonth.className = 'month out ' + (self.next ? 'next' : 'prev');
@@ -227,7 +227,10 @@
 
     this.renderEvents(todaysEvents, details);
 
-    arrow.style.left = el.offsetLeft - el.parentNode.offsetLeft + 27 + 'px';
+    arrow.style.left = el.offsetLeft - el.parentNode.offsetLeft + ((el.offsetWidth / 2) - 5)  + 'px';
+
+    // Original Code
+    // arrow.style.left = el.offsetLeft - el.parentNode.offsetLeft + 27 + 'px';
   }
 
   Calendar.prototype.renderEvents = function(events, ele) {
@@ -345,10 +348,10 @@
   // TODO; data must container actual dates
   // Date will probably come in the form of an epoch
 
-  
+
 
   function addDate(ev) {
-    
+
   }
 
   var calendar = new Calendar('#calendar', data);
